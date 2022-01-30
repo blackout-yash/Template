@@ -1,5 +1,5 @@
-const int n = 1e7;
-bitset < 1e7 + 5 > b;
+const int range = 1e7;
+bitset < range + 5 > b;
 vector <int> prime;
 
 void sieve() {
@@ -7,10 +7,10 @@ void sieve() {
 
     b[0] = b[1] = 0;
 
-    for (long long i = 2; i <= n; i++) {
+    for (int i = 2; i <= range; i++) {
         if (b[i]) {
             prime.push_back(i);
-            for (long long j = i * i; j <= n; j += i) {
+            for (int j = i * i; j <= range; j += i) {
                 b[j] = 0;
             }
         }
