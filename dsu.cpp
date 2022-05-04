@@ -1,5 +1,5 @@
-const int n = 2 * 1e5;
-vector <int> parent(n), ssize(n);
+const int n = 5 * 1e5;
+vector <int> parent(n), _size(n);
 void makeSet(int v) {
 	parent[v] = v;
 	ssize[v] = 1;
@@ -14,8 +14,8 @@ void unionSets(int a, int b) {
 	a = findSet(a);
 	b = findSet(b);
 	if (a != b) {
-		if (ssize[a] < ssize[b]) swap(a, b);
+		if (_size[a] < _size[b]) swap(a, b);
 		parent[b] = a;
-		ssize[a] += ssize[b];
+		_size[a] += _size[b];
 	}
 }
