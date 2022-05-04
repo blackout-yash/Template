@@ -2,7 +2,7 @@ const int n = 5 * 1e5;
 vector <int> parent(n), _size(n);
 void makeSet(int v) {
 	parent[v] = v;
-	ssize[v] = 1;
+	_size[v] = 1;
 }
 
 int findSet(int v) {
