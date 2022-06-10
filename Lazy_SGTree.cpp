@@ -37,8 +37,7 @@ public:
 		return min(left, right);
 	}
 
-	void update(int ind, int low, int high, int l, int r,
-	            int val) {
+	void update(int ind, int low, int high, int l, int r, int val) {
 		if (lazy[ind] != 0) {
 			seg[ind] += lazy[ind];
 			if (low != high) {
