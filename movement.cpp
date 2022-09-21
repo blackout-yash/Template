@@ -3,7 +3,20 @@
 using namespace std;
 
 int main() {
+	// 4 - Direction
+	vector <vector <int>> movement = {
+	    { -1, 0}, {0, -1}, {0, 1}, {1, 0}
+    	};
+	
+	
+	// 8 - Direction
+	vector <vector <int>> movements = {
+	    { -1, -1}, { -1, 0}, { -1, 1},
+	    {0, -1}, {0, 1},
+	    {1, -1}, {1, 0}, {1, 1}
+    	};
 
+	
 	// L Shape
 	vector <vector <int>> lshape = {
 		// up
@@ -29,8 +42,7 @@ int main() {
 		cout << "(" << x2 << "," << y2 << "), ";
 		cout << "(" << x3 << "," << y3 << ")";
 		cout << endl;
-	}
-
+	} 	
 
 	return 0;
 }
