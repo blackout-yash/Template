@@ -4,7 +4,9 @@ public:
 	SGTree(int n) {
 		seg.resize(4 * n + 1);
 	}
-
+	
+	// if the build is not used to initialize the seg => attention
+	// then initialize seg vector with -ve infinity or +ve infinity as per requirements
 	void build(int ind, int low, int high, vector <int> &arr) {
 		if (low == high) {
 			seg[ind] = arr[low];
