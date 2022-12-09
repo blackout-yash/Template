@@ -6,6 +6,15 @@ public:
 		parent.resize(n);
 		_size.resize(n);
 	}
+	
+	// DSU (int n) {
+	// 	parent.resize(n);
+	// 	_size.resize(n);
+	// 	for(int i = 0; i < n; i++) {
+	// 		parent[i] = i;
+	// 		_size = 1;
+	// 	}
+	// }
 
 	void makeSet(int v) {
 		parent[v] = v;
