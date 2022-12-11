@@ -12,7 +12,7 @@ public:
 	// 	_size.resize(n);
 	// 	for(int i = 0; i < n; i++) {
 	// 		parent[i] = i;
-	// 		_size = 1;
+	// 		_size[i] = 1;
 	// 	}
 	// }
 
