@@ -7,6 +7,7 @@ public:
 	
 	void build(int ind, int low, int high, vector <int> &arr) {
 		if (low == high) {
+			// seg[ind] -= val;
 			seg[ind] = arr[low];
 			return;
 		}
