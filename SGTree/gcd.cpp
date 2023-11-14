@@ -26,9 +26,9 @@ public:
 		int left = query(2 * ind + 1, low, mid, l, r);
 		int right = query(2 * ind + 2, mid + 1, high, l, r);
  
-        if(left == -1 && right == -1) return -1;
-        else if(left == -1) return right;
-        else if(right == -1) return left;
+        	if(left == -1 && right == -1) return -1;
+        	else if(left == -1) return right;
+        	else if(right == -1) return left;
 		return __gcd(left, right);
 	}
  
