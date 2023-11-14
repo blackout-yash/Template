@@ -1,24 +1,23 @@
 class DSU {
 public:
-	vector <int> parent, _size;
-
+	vector <int> parent, size;
 	DSU (int n) {
 		parent.resize(n);
-		_size.resize(n);
+		size.resize(n);
 	}
 	
 	// DSU (int n) {
 	// 	parent.resize(n);
-	// 	_size.resize(n);
+	// 	size.resize(n);
 	// 	for(int i = 0; i < n; i++) {
 	// 		parent[i] = i;
-	// 		_size[i] = 1;
+	// 		size[i] = 1;
 	// 	}
 	// }
 
 	void makeSet(int v) {
 		parent[v] = v;
-		_size[v] = 1;
+		size[v] = 1;
 	}
 
 	int findSet(int v) {
@@ -30,9 +29,9 @@ public:
 		a = findSet(a);
 		b = findSet(b);
 		if (a != b) {
-			if (_size[a] < _size[b]) swap(a, b);
+			if (size[a] < size[b]) swap(a, b);
 			parent[b] = a;
-			_size[a] += _size[b];
+			size[a] += size[b];
 		}
 	}
 };
