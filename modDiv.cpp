@@ -15,7 +15,7 @@ int modInverse(int b, int m) {
 	return (x % m + m) % m;
 }
 
-int modDivide(int a, int b, int m) {
+int modDiv(int a, int b, int m) {
 	a = a % m;
 	int inv = modInverse(b, m);
 	if (inv == -1) return -1;
