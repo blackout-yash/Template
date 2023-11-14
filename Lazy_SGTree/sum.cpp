@@ -30,9 +30,7 @@ public:
 		}
 
 		if (start > end || start > j || end < i) return 0;
-
-		if (start >= i && end <= j)
-			return tree[ind];
+		else if (start >= i && end <= j) return tree[ind];
 
 		int mid = start + (end - start) / 2;
 		int left = query(2 * ind + 1, start, mid, i, j);
@@ -51,8 +49,7 @@ public:
 		}
 
 		if (start > end || start > j || end < i) return;
-
-		if (start >= i && end <= j) {
+		else if (start >= i && end <= j) {
 			tree[ind] += (end - start + 1) * val;
 			if (start != end) {
 				lazy[ind * 2 + 1] += val;

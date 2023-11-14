@@ -15,7 +15,7 @@ public:
 		int mid = low + (high - low) / 2;
 		build(2 * ind + 1, low, mid, arr);
 		build(2 * ind + 2, mid + 1, high, arr);
-		seg[ind] = min(seg[2 * ind + 1], seg[2 * ind + 2]);
+		seg[ind] = max(seg[2 * ind + 1], seg[2 * ind + 2]);
 	}
 
 	int query(int ind, int low, int high, int l, int r) {
@@ -28,13 +28,13 @@ public:
 			lazy[ind] = 0;
 		}
 
-		if (high < l or r < low) return mm;
-		if (low >= l && high <= r) return seg[ind];
+		if (high < l or r < low) return -9e18;
+		else if (low >= l && high <= r) return seg[ind];
 
 		int mid = low + (high - low) / 2;
 		int left = query(2 * ind + 1, low, mid, l, r);
 		int right = query(2 * ind + 2, mid + 1, high, l, r);
-		return min(left, right);
+		return max(left, right);
 	}
 
 	void update(int ind, int low, int high, int l, int r, int val) {
@@ -44,12 +44,11 @@ public:
 				lazy[2 * ind + 1] += lazy[ind];
 				lazy[2 * ind + 2] += lazy[ind];
 			}
-
 			lazy[ind] = 0;
 		}
 
 		if (high < l or r < low) return;
-		if (low >= l && high <= r) {
+		else if (low >= l && high <= r) {
 			seg[ind] += val;
 			if (low != high) {
 				lazy[2 * ind + 1] += val;
@@ -61,6 +60,6 @@ public:
 		int mid = low + (high - low) / 2;
 		update(2 * ind + 1, low, mid, l, r, val);
 		update(2 * ind + 2, mid + 1, high, l, r, val);
-		seg[ind] = min(seg[2 * ind + 1], seg[2 * ind + 2]);
+		seg[ind] = max(seg[2 * ind + 1], seg[2 * ind + 2]);
 	}
 };
