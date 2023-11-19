@@ -6,6 +6,6 @@ vector <int> primeFactors(int n) {
             		n = n / i;  
 		} 
 	} 
-    if (n >= 2) factor.push_back(n);
+	if (n >= 2) factor.push_back(n);
 	return factor;
 }
