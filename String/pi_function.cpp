@@ -18,7 +18,7 @@ vector <int> allOccurence(string &pat, string &text) {
             int curr = i - 2 * n;
             // Only non overlapping occurence
             if(ans.empty()) ans.push_back(curr);
-            else if(curr - ans.back() >= k) ans.push_back(curr);
+            else if(curr - ans.back() >= n) ans.push_back(curr);
 
             // all occurence
             // ans.push_back(curr);
